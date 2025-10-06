@@ -1,0 +1,41 @@
+/****** HAMBURGER ICON ******/
+@use "../abstract/" as *;
+
+.hamburger {
+  margin-top: 15px;
+  outline: none !important;
+  display: none;
+
+  &__bar {
+    width: 40px;
+    height: 3px;
+    background-color: $theme-black;
+    margin: 0 0 6px;
+    transition: 0.4s;
+    border-radius: 2px;
+
+    &--2 {
+      width: 30px;
+    }
+  }
+
+  &--active {
+    .hamburger__bar--1 {
+      transform: rotate(-45deg) translate(-7px, 4px);
+    }
+
+    .hamburger__bar--2 {
+      opacity: 0;
+    }
+
+    .hamburger__bar--3 {
+      transform: rotate(45deg) translate(-8px, -6px);
+    }
+  }
+}
+
+@include media($sm-desktop) {
+  .hamburger {
+    display: block;
+  }
+}

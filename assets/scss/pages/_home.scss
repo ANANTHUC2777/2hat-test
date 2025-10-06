@@ -1,0 +1,514 @@
+/**Banner section style**/
+@use "../abstract/" as *;
+
+main {
+  padding-top: 20.8rem;
+  position: relative;
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    background: url(../img/svg/bg-pattern.svg) no-repeat top;
+    background-size: cover;
+    min-height: 51rem;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &::before {
+    top: 0;
+  }
+}
+
+@include media($sm-desktop) {
+  main {
+    padding-top: 14.5rem;
+  }
+}
+
+.banner {
+  background: url("../img/bannr.webp") no-repeat left center;
+  background-size: cover;
+  height: 52.6rem;
+
+  &__text-wrap {
+    background: $theme-black-300;
+    padding: 5rem 3.6rem 5.2rem 4.3rem;
+    max-width: 71.6rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -50%);
+  }
+
+  &__title {
+    text-transform: capitalize;
+    color: $white;
+    margin-bottom: 3rem;
+    font: 700 4.8rem/4.8rem $font-prox;
+  }
+
+  &__description {
+    margin-bottom: 5.4rem;
+    color: $white;
+    font: 400 2rem/2.8rem $font-prox;
+  }
+}
+
+@include media($lg-desktop) {
+  .banner {
+    &__title {
+      font-size: 3.6rem;
+    }
+  }
+}
+
+@include media($md-desktop) {
+  .banner {
+    &__title {
+      font-size: 3.2rem;
+      margin-bottom: 2.4rem;
+    }
+  }
+}
+
+@include media($sm-desktop) {
+  .banner {
+    background-position: 20% 25%;
+    height: 62.6rem;
+
+    &__text-wrap {
+      padding: 3.2rem;
+    }
+  }
+}
+
+@include media($tab) {
+  .banner {
+    &__text-wrap {
+      max-width: 100%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@include media($sm-tab) {
+  .banner {
+    &__text-wrap {
+      padding: 3.2rem;
+    }
+  }
+}
+
+@include media($mobile) {
+  main {
+    padding-top: 20rem;
+  }
+
+  .bg--white {
+    background: $white-100;
+  }
+
+  .banner {
+    order: 2;
+    height: 42.6rem;
+    background: none;
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__text-wrap {
+      background: $white-100;
+      padding: 1.6rem;
+      max-width: 100%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+
+      .learn__btn {
+        border: 1px solid transparent;
+        background: $theme-black;
+        color: $white;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+        &:focus,
+        &:hover {
+          background: $white;
+          color: $theme-black;
+          border: 1px solid $theme-black;
+        }
+      }
+    }
+
+    &__title {
+      margin-bottom: 1.8rem;
+      font-size: 3.2rem;
+      text-align: center;
+      color: $theme-black;
+    }
+
+    &__description {
+      margin-bottom: 3.2rem;
+      text-align: center;
+      font-size: 1.8rem;
+      color: $theme-black;
+    }
+
+    &-mobile {
+      order: 1;
+
+      &__img {
+        height: 28rem;
+
+        img {
+          max-width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: 18% 100%;
+        }
+      }
+    }
+  }
+}
+
+.products {
+  padding-top: 8rem;
+
+  &__head {
+    text-align: center;
+    font: 700 4.8rem / 4.8rem $font-prox;
+    color: $theme-black-100;
+    margin-bottom: 2rem;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $theme-brdr;
+      width: 15rem;
+      height: 0.5rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-bottom: 3rem;
+      margin-top: 4.6rem;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font: 400 2rem / 2.8rem $font-prox;
+    color: $theme-grey-200;
+    max-width: 82.6rem;
+    margin: 4.8rem auto 4rem;
+  }
+
+  &-gallery {
+    display: none;
+
+    &__item {
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__info {
+      background: $theme-black-100;
+      border: 1px solid $white;
+      padding: 3rem;
+      position: absolute;
+      margin: 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      bottom: -2rem;
+
+      h3 {
+        font: 700 2.8rem / 2.8rem $font-prox;
+        margin-bottom: 1rem;
+        color: $white;
+        text-align: center;
+      }
+
+      p {
+        font: 400 1.6rem / 1.6rem $font-prox;
+        margin-bottom: 0;
+        color: $white;
+        text-align: center;
+      }
+    }
+  }
+
+  &-slide {
+    display: block;
+
+    .products-gallery {
+      &__item {
+        img {
+          width: 100%;
+          object-fit: cover;
+          height: 40rem;
+        }
+      }
+
+      &__info {
+        width: calc(100% - 4rem);
+
+        h3,
+        p {
+          flex-basis: 100%;
+        }
+
+        p {
+          width: 30rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    .slick-slide {
+      margin: 0 1.2rem;
+    }
+
+    .slick-list {
+      margin: 0 -1.2rem;
+    }
+
+    .slick-dots li button {
+      width: 1.6rem;
+    }
+
+    .slick-dots li button:before {
+      font-size: 1.6rem;
+      color: $theme-grey-400;
+      opacity: 1;
+    }
+
+    .slick-dots li.slick-active button:before {
+      color: $theme-black;
+    }
+
+    .slick-dots {
+      bottom: -7.2rem;
+    }
+
+    .slick-next {
+      right: 0;
+      z-index: 1;
+    }
+
+    .slick-prev {
+      left: 0;
+      z-index: 1;
+    }
+
+    .slick-next,
+    .slick-prev {
+      width: 3.8rem;
+      height: 3.8rem;
+      opacity: 1;
+      background: $theme-black-100;
+      border-radius: 50%;
+
+      &:before {
+        color: $white;
+        font-weight: 900;
+        font-size: 3rem;
+        opacity: 1;
+        top: 0.3rem;
+        position: relative;
+      }
+    }
+
+    .slick-disabled {
+      opacity: 0.5;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@include lgmedia($sm-desktop) {
+  .products {
+    &-gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-column-gap: 2.4rem;
+
+      &__col--1 {
+        grid-column: 1 / 6;
+      }
+
+      &__col--2 {
+        grid-column: 6 / 9;
+      }
+
+      &__col--3 {
+        grid-column: 9 / -1;
+        display: grid;
+        grid-template: repeat(2, 1fr) / 1fr;
+        grid-row-gap: 5rem;
+        grid-column: 9 / -1;
+      }
+
+      &__item {
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &__item--1 {
+        img {
+          height: 61.8rem;
+        }
+      }
+
+      &__item--2 {
+        img {
+          height: 61.8rem;
+        }
+      }
+    }
+
+    &-slide {
+      display: none;
+    }
+  }
+}
+
+.projects {
+  padding-top: 9.3rem;
+  padding-bottom: 7.9rem;
+
+  &-wrap {
+    margin-bottom: 4rem;
+
+    .slick-slide {
+      margin: 0 1.2rem;
+    }
+
+    .slick-list {
+      margin: 0 -1.2rem;
+    }
+
+    .slick-dots li button {
+      width: 1.6rem;
+    }
+
+    .slick-dots li button:before {
+      font-size: 1.6rem;
+      color: $theme-grey-400;
+      opacity: 1;
+    }
+
+    .slick-dots li.slick-active button:before {
+      color: $theme-black;
+    }
+
+    .slick-dots {
+      bottom: -4.8rem;
+    }
+
+    .slick-next {
+      right: 0;
+      z-index: 1;
+    }
+
+    .slick-prev {
+      left: 0;
+      z-index: 1;
+    }
+
+    .slick-next,
+    .slick-prev {
+      width: 3.8rem;
+      height: 3.8rem;
+      opacity: 1;
+      background: $theme-black-100;
+      border-radius: 50%;
+
+      &:before {
+        color: $white;
+        font-weight: 900;
+        font-size: 3rem;
+        opacity: 1;
+        top: 0.3rem;
+        position: relative;
+      }
+    }
+
+    .slick-disabled {
+      opacity: 0.5;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+
+  &-card {
+    &__body {
+      h4 {
+        color: $theme-black-100;
+        font: 600 2.6rem / 2.6rem $font-prox;
+        margin-bottom: 0.3rem;
+        text-align: center;
+        margin-top: 3.4rem;
+      }
+
+      p {
+        color: $theme-black-400;
+        font: 600 1.6rem / 2.6rem $font-prox;
+        margin-bottom: 0;
+        text-align: center;
+      }
+    }
+
+    &__head {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .slick-dotted.slick-slider{
+    margin-bottom: 7.2rem;
+  }
+}
+
+@include lgmedia($sm-desktop) {
+  .projects {
+    &-wrap {
+      display: flex;
+    }
+
+    &-card {
+      &__head {
+        max-width: 33.3rem;
+        img {
+          width: 100%;
+        }
+      }
+
+      &:not(:last-child) {
+        padding-right: 3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,163 @@
+/********* FOOTER *********/
+@use "../abstract/" as *;
+
+.footer {
+  background: $theme-black-100;
+  padding: 9.1rem 0 8.1rem;
+
+  &__row {
+    display: flex;
+  }
+
+  &__col {
+    h5 {
+      margin-bottom: 1.5rem;
+      color: $white;
+      font: 600 1.4rem / 2.1rem $font-popp-semi;
+    }
+
+    ul li {
+      font: 400 1.4rem / 2.4rem $font-popp-reg;
+      color: $white;
+
+      a {
+        font: 400 1.4rem / 2.4rem $font-popp-reg;
+        color: $theme-grey-400;
+        transition: color 0.3s ease-in-out;
+      }
+    }
+  }
+
+  &__col--1 {
+    margin-right: 31rem;
+    flex-basis: 20%;
+  }
+
+  &__col--2 {
+    margin-right: 19.2rem;
+    flex-basis: 20%;
+  }
+
+  &__col--3 {
+    margin-right: 15.3rem;
+    flex-basis: 25%;
+  }
+
+  &__col--4 {
+    flex-basis: 35%;
+  }
+
+  &__icons {
+    display: flex;
+    margin-top: 4.2rem;
+
+    li {
+      &:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+
+      a {
+        display: block;
+      }
+    }
+  }
+}
+
+@include media($lg-desktop) {
+  .footer {
+    &__col--1 {
+      margin-right: 22rem;
+    }
+  }
+}
+
+@include media($md-desktop) {
+  .footer {
+    &__col--1 {
+      margin-right: 20rem;
+    }
+
+    &__col--3 {
+      margin-right: 8rem;
+    }
+
+    &__col--2 {
+      margin-right: 10rem;
+    }
+  }
+}
+
+@include media($sm-desktop) {
+  .footer {
+    &__col--1 {
+      margin-right: 10rem;
+    }
+  }
+}
+
+@include media($tab) {
+  .footer {
+    padding: 4rem 0;
+
+    &__row {
+      flex-wrap: wrap;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__col--1 {
+      flex-basis: 100%;
+      margin-right: 0;
+      text-align: center;
+    }
+
+    &__icons {
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    &__col--2,
+    &__col--3,
+    &__col--4 {
+      flex-basis: 33.3%;
+      margin-right: 0;
+    }
+
+    &__col--1,
+    &__col--2 {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+@include media($sm-tab) {
+  .footer {
+    &__row {
+      max-width: 28rem;
+    }
+
+    &__col--2,
+    &__col--3,
+    &__col--4 {
+      flex-basis: 100%;
+      margin-bottom: 3.2rem;
+    }
+
+    &__col--1 {
+      margin-bottom: 4rem;
+    }
+
+    &__col--4 {
+      margin-bottom: 0;
+    }
+    
+    h5,
+    ul li {
+      text-align: center;
+    }
+    &__icons {
+      justify-content: center;
+    }
+  }
+}

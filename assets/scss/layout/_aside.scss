@@ -1,0 +1,65 @@
+/********* HEADER *********/
+@use "../abstract/" as *;
+@use "../vendors/hamburger" as *;
+
+.sidenav {
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  width: 0;
+  z-index: 4;
+  transition: all 1s ease-in-out;
+  top: 0;
+  background-color: $white;
+  &__overlay {
+    @extend .sidenav;
+    background-color: $black-100;
+    width: 0;
+  }
+
+  &__item {
+    padding: 1rem;
+
+    a {
+      color: $theme-black;
+      font: 700 1.6rem/1.949rem $font-prox;
+      text-transform: uppercase;
+    }
+  }
+
+  &__close {
+    text-align: right;
+    margin: 0 1rem;
+
+    a {
+      color: $theme-red !important;
+      font-size: 2.4rem !important;
+    }
+  }
+}
+
+.overlay--width {
+  width: 100vw !important;
+}
+
+.sidenav--width {
+  width: calc(100% - 700px);
+}
+
+@include media($tab) {
+  .sidenav--width {
+    width: calc(100% - 500px);
+  }
+}
+
+@include media($sm-tab) {
+  .sidenav--width {
+    width: calc(100% - 350px);
+  }
+}
+
+@include media($mobile) {
+  .sidenav--width {
+    width: calc(100% - 50px);
+  }
+}

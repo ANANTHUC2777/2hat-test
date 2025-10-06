@@ -1,0 +1,35 @@
+/********** BUTTONS ***********/
+@use "../abstract/" as *;
+
+.learn__btn {
+  width: 18rem;
+  background: $white;
+  text-transform: uppercase;
+  color: $black;
+  display: block;
+  padding: 1.6rem;
+  font: 700 1.6rem/1.949rem $font-prox;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  border: 1px solid transparent;
+  &:hover,
+  &:focus {
+    background: $black;
+    color: $white;
+  }
+}
+
+.view__btn {
+  @extend .learn__btn;
+  margin: auto;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+  background: $theme-black-100;
+  color: $white;
+  &:hover,
+  &:focus {
+    background: $white;
+    color: $theme-black-100;
+    border: 1px solid $theme-black-100;
+  }
+}

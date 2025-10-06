@@ -1,0 +1,186 @@
+/********* HEADER *********/
+@use "../abstract/" as *;
+header {
+  padding-bottom: 4.3rem;
+  z-index: 2;
+  background-color: $white;
+}
+.navbar {
+  &__logo {
+    flex-basis: 100%;
+
+    a {
+      max-width: 16.2rem;
+      padding-top: 4.9rem;
+      padding-bottom: 3rem;
+      margin-left: auto;
+      margin-right: auto;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__content {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__search {
+    max-width: 2.3rem;
+    a {
+      width: 100%;
+      display: block;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__menu {
+    li {
+      &:not(:last-child) {
+        margin-right: 5rem;
+      }
+
+      a {
+        &.active {
+          color: $theme-grey;
+        }
+
+        transition: color 0.3s ease-in-out;
+        color: $theme-black;
+        text-transform: uppercase;
+        font: 700 1.6rem/1.949rem $font-prox;
+        padding: 0 !important;
+
+        &:hover,
+        &:focus {
+          color: $theme-grey;
+        }
+      }
+    }
+  }
+
+  &__icons {
+    ul {
+      display: flex;
+      align-items: center;
+
+      li {
+        max-width: 2.1rem;
+
+        &:not(:last-child) {
+          margin-right: 2.8rem;
+        }
+
+        a {
+          display: block;
+          width: 100%;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media($sm-desktop) {
+  .navbar {
+    &__menu {
+      display: none;
+
+      &-button {
+        flex-basis: 3%;
+      }
+    }
+
+    &__logo {
+      flex-basis: 78%;
+    }
+
+    &__content {
+      flex-basis: 15%;
+      gap: 1.8rem;
+    }
+
+    &__icons {
+      ul {
+        li {
+          &:not(:last-child) {
+            margin-right: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+  
+  header {
+    padding-bottom: 0;
+  }
+}
+
+@include media($tab) {
+  .navbar {
+    &__content {
+      flex-basis: 16%;
+      gap: 1.2rem;
+    }
+
+    &__icons {
+      ul {
+        li {
+          &:not(:last-child) {
+            margin-right: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media($sm-tab) {
+  .navbar {
+    &__content {
+      flex-basis: 22%;
+      gap: 1.2rem;
+    }
+
+    &__logo {
+      flex-basis: 60%;
+    }
+  }
+}
+
+@include media($mobile) {
+  .navbar {
+    &__logo {
+      flex-basis: 100%;
+      order: 1;
+
+      a {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+    }
+
+    &__menu-button {
+      order: 2;
+    }
+
+    &__content {
+      order: 3;
+      flex-basis: 40%;
+      justify-content: flex-end;
+    }
+  }
+
+  header {
+    padding-bottom: 3rem;
+  }
+}

@@ -1,0 +1,27 @@
+/********* RETURN TO TOP *********/
+@use "../abstract/" as *;
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: $black;
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 99;
+    padding-top: 0;
+    text-align: center;
+    color:  $white;
+    font-size: 2.1rem;
+    box-shadow: 0px 1px 6px rgba(51, 60, 127, 0.33);
+    &:hover {
+        background: $white;
+        color: $black;
+    }
+}
