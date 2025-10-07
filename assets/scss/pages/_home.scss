@@ -5,8 +5,7 @@ main {
   padding-top: 20.8rem;
   position: relative;
 
-  &::after,
-  &::before {
+  &::after {
     position: absolute;
     content: "";
     background: url(../img/svg/bg-pattern.svg) no-repeat top;
@@ -18,10 +17,6 @@ main {
 
   &::after {
     bottom: 0;
-  }
-
-  &::before {
-    top: 0;
   }
 }
 
@@ -182,6 +177,18 @@ main {
 
 .products {
   padding-top: 8rem;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background: url(../img/svg/bg-pattern.svg) no-repeat top;
+    background-size: cover;
+    min-height: 51rem;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+  }
 
   &__head {
     text-align: center;
@@ -394,6 +401,20 @@ main {
   }
 }
 
+@include media($mobile) {
+  .products {
+    &-slide {
+      .slick-slide {
+        margin: 0 0.5rem;
+      }
+
+      .slick-list {
+        margin: 0 -0.5rem;
+      }
+    }
+  }
+}
+
 .projects {
   padding-top: 9.3rem;
   padding-bottom: 7.9rem;
@@ -487,7 +508,7 @@ main {
     }
   }
 
-  .slick-dotted.slick-slider{
+  .slick-dotted.slick-slider {
     margin-bottom: 7.2rem;
   }
 }
@@ -508,6 +529,20 @@ main {
 
       &:not(:last-child) {
         padding-right: 3rem;
+      }
+    }
+  }
+}
+
+@include media($mobile) {
+  .projects {
+    &-wrap {
+      .slick-slide {
+        margin: 0 0.5rem;
+      }
+
+      .slick-list {
+        margin: 0 -0.5rem;
       }
     }
   }
